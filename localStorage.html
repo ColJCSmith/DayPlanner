@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <row class = "row">
+          <label class="time-block" id="9am">9</label>
+          <input class="description" type="text" name="" id="nineAMTask" style="width: 80%; background-color: white";>
+          <button class="saveBtn" id="nineAMSubmit">Save Task</button>
+        </row>
+       
+<script>
+
+var taskInput = document.querySelector("#nineAMTask");
+var taskInputString = JSON.stringify(taskInput);
+var button = document.querySelector("#nineAMSubmit");
+
+let myTasks = {
+    time: "9AM",
+    task: taskInputString
+}
+
+let myTasksString = JSON.stringify(myTasks);
+
+function savetoLocalStorage() {
+    localStorage.setItem("myTask", myTasksString);
+}
+button.addEventListener("click", savetoLocalStorage);
+
+</script>
+</body>
+</html>

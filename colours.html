@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <row class = "row">
+          <label class="time-block" id="9am">9</label>
+          <input class="description" type="text" name="" id="nineAMTask" style="width: 80%; background-color: white";>
+          <button class="saveBtn" id="nineAMSubmit">Save Task</button>
+        </row>
+<script>
+    var currentTime = 3
+    if (currentTime > document.getElementById("9am").innerHTML) {
+        document.getElementById("nineAMTask").style.backgroundColor = "red";
+    }
+    else if (currentTime < document.getElementById("9am").innerHTML) {
+        document.getElementById("nineAMTask").style.backgroundColor = "green";
+    }
+    else document.getElementById("nineAMTask").style.backgroundColor = "grey";
+</script>
+    </body>
+</html>
