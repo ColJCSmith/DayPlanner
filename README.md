@@ -161,8 +161,9 @@ $(".saveBtn").on("click", function() {
 
     <script src="moment.min.js"></script>
 
-      $(document).ready(function() {
-        var dateAndTime = moment();
-        var dateAndTime2 = dateAndTime.format('MMMM Do YYYY, h:mm:ss a');
-          $("#currentDay").text(dateAndTime2);
-          });
+
+
+      $("#nineAMSubmit").addEventListener("click", function() {
+        var task = document.getElementbyID("#9amTask");
+      console.log(task);
+      });

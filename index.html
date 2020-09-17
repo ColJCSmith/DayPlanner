@@ -79,11 +79,10 @@
 $(document).ready(function() {
 /// this section grabs the current time using moment.js.  It then converts it into different formats.  
 /// dateAndTime2 holds today's date, which is displayed in the header.
-/// dateAndTime3 is used to fetch the hour, which is then used to colour code the input box.
+/// dateAndTime3 is used to fetch the hour (in 24hour format), which is then used to colour code the input box.
   var dateAndTime = moment();
   var dateAndTime2 = dateAndTime.format('MMMM Do YYYY');
   var dateAndTime3 = dateAndTime.format('HH');
-  console.log(dateAndTime3);
     $("#currentDay").text(dateAndTime2);
 
 // this section uses a series of if / else statements to colour-code the input boxes, based on the time of day.  
@@ -95,6 +94,21 @@ else if (dateAndTime3 < document.getElementById("9am").innerHTML) {
 }
 else document.getElementById("nineAMTask").style.backgroundColor = "grey";
 
+// var nineAMRecord = localStorage.getItem("task");
+//  if (nineAMRecord == "") {
+//    $("#nineAMTask").text = JSON.parse(nineAMRecord);
+//  }
+
+var button = document.querySelector("#nineAMSubmit");
+function savetoLocalStorage() {    
+    let my9AMTasks = {
+    time: "9AM",
+    task: document.getElementById("nineAMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my9AMTasks));
+}  
+button.addEventListener("click", savetoLocalStorage);
+
 if (dateAndTime3 > document.getElementById("10am").innerHTML) {
     document.getElementById("tenAMTask").style.backgroundColor = "red";
 }
@@ -102,6 +116,16 @@ else if (dateAndTime3 < document.getElementById("10am").innerHTML) {
     document.getElementById("tenAMTask").style.backgroundColor = "green";
 }
 else document.getElementById("tenAMTask").style.backgroundColor = "grey";
+
+var button = document.querySelector("#tenAMSubmit");
+function savetoLocalStorage() {    
+    let my10AMTasks = {
+    time: "10AM",
+    task: document.getElementById("tenAMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my10AMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
 
 if (dateAndTime3 > document.getElementById("11am").innerHTML) {
     document.getElementById("elevenAMTask").style.backgroundColor = "red";
@@ -111,6 +135,16 @@ else if (dateAndTime3 < document.getElementById("11am").innerHTML) {
 }
 else document.getElementById("elevenAMTask").style.backgroundColor = "grey";
 
+var button = document.querySelector("#elevenAMSubmit");
+function savetoLocalStorage() {    
+    let my11AMTasks = {
+    time: "11AM",
+    task: document.getElementById("elevenAMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my11AMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
+
 if (dateAndTime3 > document.getElementById("12pm").innerHTML) {
     document.getElementById("twelvePMTask").style.backgroundColor = "red";
 }
@@ -118,6 +152,16 @@ else if (dateAndTime3 < document.getElementById("12pm").innerHTML) {
     document.getElementById("twelvePMTask").style.backgroundColor = "green";
 }
 else document.getElementById("twelvePMTask").style.backgroundColor = "grey";
+
+var button = document.querySelector("#twelvePMSubmit");
+function savetoLocalStorage() {    
+    let my12PMTasks = {
+    time: "12PM",
+    task: document.getElementById("twelvePMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my12PMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
 
 if (dateAndTime3 > document.getElementById("1pm").innerHTML) {
     document.getElementById("onePMTask").style.backgroundColor = "red";
@@ -127,6 +171,16 @@ else if (dateAndTime3 < document.getElementById("1pm").innerHTML) {
 }
 else document.getElementById("onePMTask").style.backgroundColor = "grey";
 
+var button = document.querySelector("#onePMSubmit");
+function savetoLocalStorage() {    
+    let my1PMTasks = {
+    time: "1PM",
+    task: document.getElementById("onePMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my1PMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
+
 if (dateAndTime3 > document.getElementById("2pm").innerHTML) {
     document.getElementById("twoPMTask").style.backgroundColor = "red";
 }
@@ -134,6 +188,16 @@ else if (dateAndTime3 < document.getElementById("2pm").innerHTML) {
     document.getElementById("twoPMTask").style.backgroundColor = "green";
 }
 else document.getElementById("twoPMTask").style.backgroundColor = "grey";
+
+var button = document.querySelector("#twoPMSubmit");
+function savetoLocalStorage() {    
+    let my2PMTasks = {
+    time: "2PM",
+    task: document.getElementById("twoPMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my2PMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
 
 if (dateAndTime3 > document.getElementById("3pm").innerHTML) {
     document.getElementById("threePMTask").style.backgroundColor = "red";
@@ -143,6 +207,16 @@ else if (dateAndTime3 < document.getElementById("3pm").innerHTML) {
 }
 else document.getElementById("threePMTask").style.backgroundColor = "grey";
 
+var button = document.querySelector("#threePMSubmit");
+function savetoLocalStorage() {    
+    let my3PMTasks = {
+    time: "3PM",
+    task: document.getElementById("threePMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my3PMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
+
 if (dateAndTime3 > document.getElementById("4pm").innerHTML) {
     document.getElementById("fourPMTask").style.backgroundColor = "red";
 }
@@ -151,15 +225,20 @@ else if (dateAndTime3 < document.getElementById("4pm").innerHTML) {
 }
 else document.getElementById("fourPMTask").style.backgroundColor = "grey";
 
-var taskInput = document.querySelector("#nineAMTask");
-var text = document.querySelector("#nineAMTask");
+var button = document.querySelector("#fourPMSubmit");
+function savetoLocalStorage() {    
+    let my4PMTasks = {
+    time: "4PM",
+    task: document.getElementById("fourPMTask").value
+}
+    localStorage.setItem("myTask", JSON.stringify(my4PMTasks));
+}  
+    button.addEventListener("click", savetoLocalStorage);
 
-/// $(".saveBtn").on("click", function() {
-///  let task = document.getElementById("nineAMTask").value;
-///    console.log(task);
-///      let taskStore = JSON.stringify(task);
-///    localStorage.setItem("task", taskStore);
-/// });
+// var taskInput = document.querySelector("#nineAMTask");
+// var text = document.querySelector("#nineAMTask");
+
+
 });
 </script>
 
